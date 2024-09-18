@@ -57,7 +57,7 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-  #  - secretName: chart-example-tls
+  #  - secretName: dev-artemis.tls
   #    hosts:
   #      - dev-artemis.projectxconsulting.net
 
