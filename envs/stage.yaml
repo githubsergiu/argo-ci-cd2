@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-stage/terraform-project-grande/apr-project/artemis
+  repository: us-central1-docker.pkg.dev/terraform-project-grande/apr-project/artemis
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "2.0.0"
@@ -52,14 +52,14 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-stage-artemis.projectxconsulting.net
+    - host: stage-artemis.projectxconsulting.net
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-stage-artemis.tls
+  #  - secretName: stage-artemis.tls
   #    hosts:
-stage-artemis.projectxconsulting.net
+  #      - stage-artemis.projectxconsulting.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -98,4 +98,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
